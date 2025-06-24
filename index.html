@@ -18,34 +18,41 @@
   <div class="container">
     <h1 style="text-align:center;">Покупка напитка</h1>
 
-    <label for="username">Админ:</label>
-    <select id="username">
-      <option value="">Выбери имя</option>
-      <option value="Полина">Полина</option>
-      <option value="Емеля">Емеля</option>
-      <option value="Кирилл">Кирилл</option>
-    </select>
-
-    <label for="qrInput">QR-код:</label>
-    <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
-    <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
-
-    <button onclick="handleScan()">Распознать</button>
-
-    <div id="result" class="hidden">
-      <h3>Результат:</h3>
-      <p><strong>Товар:</strong> <span id="itemName"></span></p>
-      <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
+    <!-- Шаг 1 -->
+    <div id="step1">
+      <label for="username">Админ:</label>
+      <select id="username">
+        <option value="">Выбери имя</option>
+        <option value="Полина">Полина</option>
+        <option value="Емеля">Емеля</option>
+        <option value="Кирилл">Кирилл</option>
+      </select>
+      <button onclick="goToScan()">Далее</button>
     </div>
 
-    <div id="manualInput" class="hidden">
-      <p>Товар не найден. Укажи название и EAN13:</p>
-      <input type="text" id="manualName" placeholder="Название напитка"/>
-      <input type="text" id="manualEan" placeholder="EAN13"/>
+    <!-- Шаг 2 -->
+    <div id="step2" class="hidden">
+      <label for="qrInput">QR-код:</label>
+      <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
+      <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
+      <button onclick="handleScan()">Распознать</button>
+
+      <div id="result" class="hidden">
+        <h3>Результат:</h3>
+        <p><strong>Товар:</strong> <span id="itemName"></span></p>
+        <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
+      </div>
+
+      <div id="manualInput" class="hidden">
+        <p>Товар не найден. Укажи название и EAN13:</p>
+        <input type="text" id="manualName" placeholder="Название напитка"/>
+        <input type="text" id="manualEan" placeholder="EAN13"/>
+      </div>
+
+      <button id="confirmBtn" class="hidden" onclick="showPaymentInstructions()">Подтвердить покупку</button>
     </div>
 
-    <button id="confirmBtn" class="hidden" onclick="showPaymentInstructions()">Подтвердить покупку</button>
-
+    <!-- Шаг 3 -->
     <div id="paymentSection" class="hidden">
       <p style="margin-top:15px;"><strong>Переведи <span id="payAmount"></span> ₽ за "<span id="payName"></span>" по номеру<br>
       <span style="font-size: 18px;">+79958863666</span></strong></p>
@@ -56,6 +63,6 @@
 
     <p id="status"></p>
   </div>
-  <script src="script-v2.js"></script>
+  <script src="script-v3.js"></script>
 </body>
 </html>
