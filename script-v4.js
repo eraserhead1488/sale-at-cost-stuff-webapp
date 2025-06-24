@@ -519,10 +519,10 @@ function handleScan() {
     document.getElementById("itemName").textContent = matched.name;
     document.getElementById("itemPrice").textContent = matched.price;
     document.getElementById("result").classList.remove("hidden");
-    document.getElementById("manualInput").classList.add("hidden");
+    document.getElementById("manualProductFields").classList.add("hidden");
   } else {
     document.getElementById("result").classList.add("hidden");
-    document.getElementById("manualInput").classList.remove("hidden");
+    document.getElementById("manualProductFields").classList.remove("hidden");
   }
 
   localStorage.setItem("lastCode", code);
