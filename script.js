@@ -481,6 +481,8 @@ let drinks = [
     "prefix": "0104603934000854"
   }
 ];
+let timerInterval;
+let countdownTime;
 
 function handleScan() {
   const code = document.getElementById("qrInput").value.trim();
@@ -512,6 +514,26 @@ function showPaymentInstructions() {
   document.getElementById("payAmount").textContent = price;
   document.getElementById("payName").textContent = name;
   document.getElementById("paymentSection").classList.remove("hidden");
+
+  // Запуск таймера
+  countdownTime = 600;
+  updateCountdown();
+  clearInterval(timerInterval);
+  timerInterval = setInterval(updateCountdown, 1000);
+}
+
+function updateCountdown() {
+  const countdownElem = document.getElementById("countdown");
+  if (countdownTime <= 0) {
+    countdownElem.textContent = "Время истекло.";
+    document.getElementById("doneBtn").disabled = true;
+    clearInterval(timerInterval);
+  } else {
+    const min = Math.floor(countdownTime / 60);
+    const sec = countdownTime % 60;
+    countdownElem.textContent = "Осталось: " + min + "м " + String(sec).padStart(2, '0') + "с";
+    countdownTime--;
+  }
 }
 
 function confirmPayment() {
@@ -533,4 +555,5 @@ function confirmPayment() {
   document.getElementById("qrInput").value = "";
   document.getElementById("itemName").textContent = "";
   document.getElementById("itemPrice").textContent = "";
+  clearInterval(timerInterval);
 }
