@@ -32,10 +32,27 @@
 
     <!-- Шаг 2 -->
     <div id="step2" class="hidden">
+      <label>
+        <input type="checkbox" id="manualToggle" onchange="toggleManualMode()" />
+        Товар не по Честному Знаку
+      </label>
+      
+    <!-- Поле QR-кода -->
+    <div id="qrBlock">
       <label for="qrInput">QR-код:</label>
       <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
       <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
-      <button onclick="handleScan()">Распознать</button>
+    </div>
+
+    <!-- Ручной ввод товара -->
+    <div id="manualProductFields" class="hidden">
+      <label for="manualName">Название товара:</label>
+      <input type="text" id="manualName" placeholder="Например: Кола 0.5" />
+      <label for="manualEan">Штрихкод (EAN13):</label>
+      <input type="text" id="manualEan" placeholder="4601234567890" />
+    </div>
+
+    <button onclick="handleScan()">Распознать</button>   
 
       <div id="result" class="hidden">
         <h3>Результат:</h3>
