@@ -24,35 +24,36 @@
     </div>
 
     <!-- Шаг 2 -->
-    <div id="step2" class="hidden">
-      <label>
-        <input type="checkbox" id="manualToggle" onchange="toggleManualMode()" />
-        Товар не по Честному Знаку
-      </label>
+<div id="step2" class="hidden">
+  <div id="qrBlock">
+    <label for="qrInput">QR-код:</label>
+    <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
+    <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
+  </div>
 
-      <div id="qrBlock">
-        <label for="qrInput">QR-код:</label>
-        <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
-        <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
-      </div>
+  <div id="manualProductFields" class="hidden">
+    <label for="manualName">Название товара:</label>
+    <input type="text" id="manualName" placeholder="Например: Кола 0.5" />
+    <label for="manualEan">Штрихкод (EAN13):</label>
+    <input type="text" id="manualEan" placeholder="4601234567890" />
+  </div>
 
-      <div id="manualProductFields" class="hidden">
-        <label for="manualName">Название товара:</label>
-        <input type="text" id="manualName" placeholder="Например: Кола 0.5" />
-        <label for="manualEan">Штрихкод (EAN13):</label>
-        <input type="text" id="manualEan" placeholder="4601234567890" />
-      </div>
+  <!-- Чекбокс теперь находится здесь -->
+  <div style="margin-top: 14px; display: flex; align-items: center; justify-content: center; gap: 10px;">
+    <input type="checkbox" id="manualToggle" onchange="toggleManualMode()" style="width: 20px; height: 20px;" />
+    <label for="manualToggle" style="font-size: 16px; margin: 0;">Товар не по Честному Знаку</label>
+  </div>
 
-      <button onclick="handleScan()">Распознать</button>
+  <button onclick="handleScan()">Распознать</button>
 
-      <div id="result" class="hidden">
-        <h3>Результат:</h3>
-        <p><strong>Товар:</strong> <span id="itemName"></span></p>
-        <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
-      </div>
+  <div id="result" class="hidden">
+    <h3>Результат:</h3>
+    <p><strong>Товар:</strong> <span id="itemName"></span></p>
+    <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
+  </div>
 
-      <button id="confirmBtn" class="hidden" onclick="showPaymentInstructions()">Подтвердить покупку</button>
-    </div>
+  <button id="confirmBtn" class="hidden" onclick="showPaymentInstructions()">Подтвердить покупку</button>
+</div>
 
     <!-- Шаг 3 -->
     <div id="paymentSection" class="hidden">
