@@ -485,10 +485,12 @@ let drinks = [
 function handleScan() {
   const code = document.getElementById("qrInput").value.trim();
   const user = document.getElementById("username").value.trim();
-  if (!code || !user) return alert("Введите QR-код и имя сотрудника");
+  if (!code || !user) return alert("Введите QR-код и выбери имя администратора");
 
   const matched = drinks.find(item => code.startsWith(item.prefix));
   document.getElementById("confirmBtn").classList.remove("hidden");
+  document.getElementById("paymentSection").classList.add("hidden");
+  document.getElementById("status").textContent = "";
 
   if (matched) {
     document.getElementById("itemName").textContent = matched.name;
@@ -503,7 +505,16 @@ function handleScan() {
   localStorage.setItem("lastCode", code);
 }
 
-function confirmPurchase() {
+function showPaymentInstructions() {
+  const name = document.getElementById("itemName").textContent || document.getElementById("manualName").value.trim();
+  const price = document.getElementById("itemPrice").textContent || "—";
+
+  document.getElementById("payAmount").textContent = price;
+  document.getElementById("payName").textContent = name;
+  document.getElementById("paymentSection").classList.remove("hidden");
+}
+
+function confirmPayment() {
   const code = localStorage.getItem("lastCode");
   const user = document.getElementById("username").value.trim();
   const name = document.getElementById("itemName").textContent || document.getElementById("manualName").value.trim();
@@ -518,6 +529,7 @@ function confirmPurchase() {
 
   document.getElementById("status").textContent = "Покупка сохранена!";
   document.getElementById("confirmBtn").classList.add("hidden");
+  document.getElementById("paymentSection").classList.add("hidden");
   document.getElementById("qrInput").value = "";
   document.getElementById("itemName").textContent = "";
   document.getElementById("itemPrice").textContent = "";
