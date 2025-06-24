@@ -1,0 +1,16 @@
+
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Журнал</title></head>
+<body><h2>Журнал покупок</h2>
+<table border="1" cellpadding="8"><thead><tr>
+<th>Дата</th><th>Админ</th><th>QR</th><th>Название</th><th>EAN13</th>
+</tr></thead><tbody id="logTable"></tbody></table>
+<script>
+let data = JSON.parse(localStorage.getItem("purchaseLog") || "[]");
+let tbody = document.getElementById("logTable");
+data.forEach(row => {{
+  let tr = document.createElement("tr");
+  tr.innerHTML = `<td>${{row.time}}</td><td>${{row.user}}</td><td>${{row.code}}</td><td>${{row.name}}</td><td>${{row.ean}}</td>`;
+  tbody.appendChild(tr);
+}});
+</script></body></html>
