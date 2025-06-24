@@ -25,12 +25,7 @@
 
     <!-- Шаг 2 -->
     <div id="step2" class="hidden">
-      <label>
-        <input type="checkbox" id="manualToggle" onchange="toggleManualMode()" />
-        Товар не по Честному Знаку
-      </label>
-
-      <div id="qrBlock">
+       <div id="qrBlock">
         <label for="qrInput">QR-код:</label>
         <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
         <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
@@ -42,7 +37,12 @@
         <label for="manualEan">Штрихкод (EAN13):</label>
         <input type="text" id="manualEan" placeholder="4601234567890" />
       </div>
-
+      
+      <div style="margin-top: 10px; text-align: center;">
+       <input type="checkbox" id="manualToggle" onchange="toggleManualMode()" style="width: 20px; height: 20px; vertical-align: middle;" />
+       <label for="manualToggle" style="font-size: 16px; margin-left: 8px;">Товар не по Честному Знаку</label>
+      </div>
+      
       <button onclick="handleScan()">Распознать</button>
 
       <div id="result" class="hidden">
