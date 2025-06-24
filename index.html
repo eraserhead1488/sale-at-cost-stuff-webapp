@@ -1,20 +1,24 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Покупка напитка</title>
+  <title>Покупка товара по себестоимости</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
-    <h1>Покупка напитка</h1>
-    <label>Имя сотрудника:</label>
-    <input type="text" id="username" placeholder="Например: Кирилл" />
-    <label>QR-код:</label>
-    <textarea id="qrInput" placeholder="Вставь QR-код вручную или отсканируй"></textarea>
-    <button onclick="handleScan()">Распознать</button>
+    <h1>Покупка</h1>
+    <label>Админ:</label>
+    <select id="username">
+      <option value="">Выбери своё имя</option>
+      <option value="Полина">Полина</option>
+      <option value="Емеля">Емеля</option>
+      <option value="Кирилл">Кирилл</option>
+    </select>
+    <label>QR-код (Перед сканированием измени раскладку на ENG!):</label>
+    <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
+    <button onclick="handleScan()">Подтвердить</button>
 
     <div id="result" class="hidden">
       <h3>Результат:</h3>
@@ -23,7 +27,7 @@
     </div>
 
     <div id="manualInput" class="hidden">
-      <p>Товар не найден. Укажи название и EAN13:</p>
+      <p>Товар не найден. Укажи название и EAN13 (числовой линейный штрих-код):</p>
       <input type="text" id="manualName" placeholder="Название напитка"/>
       <input type="text" id="manualEan" placeholder="EAN13"/>
     </div>
