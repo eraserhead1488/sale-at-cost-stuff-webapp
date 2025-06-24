@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Покупка напитка</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Покупка напитка</h1>
+    <p>Сканируй QR-код или вставь его текст вручную:</p>
+    <textarea id="qrInput" placeholder="Вставь QR-код или отсканируй"></textarea>
+    <button onclick="handleScan()">Распознать</button>
+
+    <div id="result" class="hidden">
+      <h3>Результат:</h3>
+      <p><strong>Товар:</strong> <span id="itemName"></span></p>
+      <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
+    </div>
+
+    <div id="manualInput" class="hidden">
+      <p>Товар не найден. Укажи название и EAN13:</p>
+      <input type="text" id="manualName" placeholder="Название напитка"/>
+      <input type="text" id="manualEan" placeholder="EAN13"/>
+    </div>
+
+    <button id="confirmBtn" class="hidden" onclick="confirmPurchase()">Подтвердить покупку</button>
+    <p id="status"></p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
