@@ -10,8 +10,10 @@
 <body>
   <div class="container">
     <h1>Покупка напитка</h1>
-    <p>Сканируй QR-код или вставь его текст вручную:</p>
-    <textarea id="qrInput" placeholder="Вставь QR-код или отсканируй"></textarea>
+    <label>Имя сотрудника:</label>
+    <input type="text" id="username" placeholder="Например: Кирилл" />
+    <label>QR-код:</label>
+    <textarea id="qrInput" placeholder="Вставь QR-код вручную или отсканируй"></textarea>
     <button onclick="handleScan()">Распознать</button>
 
     <div id="result" class="hidden">
@@ -29,7 +31,6 @@
     <button id="confirmBtn" class="hidden" onclick="confirmPurchase()">Подтвердить покупку</button>
     <p id="status"></p>
   </div>
-
   <script src="script.js"></script>
 </body>
 </html>

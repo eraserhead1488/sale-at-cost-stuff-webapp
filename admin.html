@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <title>Журнал покупок (Только для администратора)</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; }
+    th { background: #eee; }
+  </style>
+</head>
+<body>
+  <h1>Журнал покупок</h1>
+  <table id="logTable">
+    <thead>
+      <tr>
+        <th>Дата</th>
+        <th>Сотрудник</th>
+        <th>QR-код</th>
+        <th>Название</th>
+        <th>EAN13</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    const data = JSON.parse(localStorage.getItem("purchaseLog") || "[]");
+    const tbody = document.querySelector("#logTable tbody");
+    data.forEach(entry => {{
+      const row = document.createElement("tr");
+      row.innerHTML = `<td>${entry.time}</td><td>${entry.user}</td><td>${entry.code}</td><td>${entry.name}</td><td>${entry.ean}</td>`;
+      tbody.appendChild(row);
+    }});
+  </script>
+</body>
+</html>
