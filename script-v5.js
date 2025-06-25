@@ -624,12 +624,6 @@ let drinks = [
     "ean13": "4627187857119"
   },
   {
-    "name": "Maltesers",
-    "price": 85,
-    "prefix": "",
-    "ean13": "5000159555715"
-  },
-  {
     "name": "KitKat",
     "price": 70,
     "prefix": "",
