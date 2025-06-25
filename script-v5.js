@@ -19,19 +19,19 @@ function goToScan() {
 let drinks = [
   {
     "name": "Adrenaline Rush Game fuel 0,449 л",
-    "price": 100,
+    "price": 110,
     "prefix": "0104600494694172",
     "ean13": "4600494694172"
   },
   {
     "name": "Adrenaline Rush Zero sugar 0,449 л",
-    "price": 100,
+    "price": 110,
     "prefix": "0104600494666612",
     "ean13": "4600494666612"
   },
   {
     "name": "Adrenaline Rush Апельсин 0,449 л",
-    "price": 100,
+    "price": 110,
     "prefix": "0104600494694165",
     "ean13": "4600494694165"
   },
@@ -43,13 +43,13 @@ let drinks = [
   },
   {
     "name": "Adrenaline Rush Манго 0,449 л",
-    "price": 100,
+    "price": 110,
     "prefix": "0104600494667930",
     "ean13": "4600494667930"
   },
   {
     "name": "Adrenaline Rush Ягодный 0,449 л",
-    "price": 100,
+    "price": 110,
     "prefix": "0104600494694226",
     "ean13": "4600494694226"
   },
@@ -73,7 +73,7 @@ let drinks = [
   },
   {
     "name": "Burn Апельсин 0,449 л",
-    "price": 100,
+    "price": 105,
     "prefix": "0105061013963374",
     "ean13": "5061013963374"
   },
@@ -307,7 +307,7 @@ let drinks = [
   },
   {
     "name": "Lipton Зеленый 0,5 л",
-    "price": 60,
+    "price": 65,
     "prefix": "0104600494600463",
     "ean13": "4600494600463"
   },
@@ -319,13 +319,13 @@ let drinks = [
   },
   {
     "name": "Lipton Малина 0,5 л",
-    "price": 60,
+    "price": 65,
     "prefix": "0104600494696862",
     "ean13": "4600494696862"
   },
   {
     "name": "Lipton Манго 0,5 л",
-    "price": 60,
+    "price": 65,
     "prefix": "0104600494687891",
     "ean13": "4600494687891"
   },
@@ -487,31 +487,31 @@ let drinks = [
   },
   {
     "name": "The Scandalist Energy Drink Adder Terror 0,5 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104687203127848",
     "ean13": "4687203127848"
   },
   {
     "name": "The Scandalist Energy Drink Geneve 0,5 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104687203127831",
     "ean13": "4687203127831"
   },
   {
     "name": "The Scandalist Geneve 1988 0,45 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104627187857126",
     "ean13": "4627187857126"
   },
   {
     "name": "The Scandalist Reactive Ex's Heart 0,45 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104627187857102",
     "ean13": "4627187857102"
   },
   {
     "name": "The Scandalist Reactive War Head 0,45 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104627187857096",
     "ean13": "4627187857096"
   },
@@ -613,13 +613,13 @@ let drinks = [
   },
   {
     "name": "The Scandalist Energy Drink Adder Terror 0,45 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104627187857089",
     "ean13": "4627187857089"
   },
   {
     "name": "The Scandalist Energy Drink Geneve 0,45 л",
-    "price": 105,
+    "price": 110,
     "prefix": "0104627187857119",
     "ean13": "4627187857119"
   },
@@ -637,13 +637,13 @@ let drinks = [
   },
   {
     "name": "Панкейк малина",
-    "price": 70,
+    "price": 65,
     "prefix": "",
     "ean13": "4610169563412"
   },
   {
     "name": "Панкейк шоколад",
-    "price": 70,
+    "price": 65,
     "prefix": "",
     "ean13": "4610169563399"
   },
@@ -679,7 +679,7 @@ let drinks = [
   },
   {
     "name": "Maltesers",
-    "price": 89,
+    "price": 90,
     "prefix": "",
     "ean13": "5000159555715"
   },
