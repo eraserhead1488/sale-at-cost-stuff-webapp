@@ -678,6 +678,12 @@ let drinks = [
     "ean13": "46025418"
   },
   {
+    "name": "Maltesers",
+    "price": 89,
+    "prefix": "",
+    "ean13": "5000159555715"
+  },
+  {
     "name": "Mars",
     "price": 75,
     "prefix": "",
@@ -707,7 +713,7 @@ function handleScan() {
       alert("Введите QR-код и выбери имя администратора");
       return;
     }
-    matched = drinks.find(item => code.startsWith(item.prefix));
+    matched = drinks.find(item => item.prefix && code.startsWith(item.prefix));
     localStorage.setItem("lastCode", code);
   }
 
