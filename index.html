@@ -26,8 +26,8 @@
     <!-- Шаг 2 -->
     <div id="step2" class="hidden">
       <div id="qrBlock">
-        <label for="qrInput">QR-код DataMatrix:</label>
-        <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
+        <label for="qrInput">Отсканируй QR-код (DataMatrix):</label>
+        <textarea id="qrInput" placeholder="Перед сканированием измени раскладку на ENG!"></textarea>
         <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
       </div>
 
@@ -51,7 +51,7 @@
       <button onclick="handleScan()">Подтвердить</button>
 
       <div id="result" class="hidden">
-        <h3>Результат:</h3>
+        <h3>Проверь:</h3>
         <p><strong>Товар:</strong> <span id="itemName"></span></p>
         <p><strong>Цена:</strong> <span id="itemPrice"></span> ₽</p>
       </div>
