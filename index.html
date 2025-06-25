@@ -4,12 +4,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Покупка напитка</title>
+  <title>Покупка бара по себестоимости</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
-    <h1 style="text-align:center;">Покупка напитка</h1>
+    <h1 style="text-align:center;">Покупка</h1>
 
     <!-- Шаг 1 -->
     <div id="step1">
@@ -26,7 +26,7 @@
     <!-- Шаг 2 -->
     <div id="step2" class="hidden">
       <div id="qrBlock">
-        <label for="qrInput">QR-код:</label>
+        <label for="qrInput">QR-код DataMatrix:</label>
         <textarea id="qrInput" placeholder="Отсканируй QR-код напитка"></textarea>
         <small style="color: #888;">(Перед сканированием измени раскладку на ENG!)</small>
       </div>
@@ -48,7 +48,7 @@
         <textarea id="manualCommentText" placeholder="Например: KitKat 45г, код 123..."></textarea>
       </div>
 
-      <button onclick="handleScan()">Распознать</button>
+      <button onclick="handleScan()">Подтвердить</button>
 
       <div id="result" class="hidden">
         <h3>Результат:</h3>
@@ -62,7 +62,7 @@
     <!-- Шаг 3 -->
     <div id="paymentSection" class="hidden">
       <p><strong>Переведи <span id="payAmount"></span> ₽ за "<span id="payName"></span>" по номеру<br>
-      <span style="font-size: 18px;">+79958863666</span></strong></p>
+      <span style="font-size: 18px;">+7 (995) 886-36-66</span></strong></p>
       <p class="payment-timer">Соверши перевод в течение 10 минут, по истечении времени подтверждение станет недоступным.</p>
       <p><span id="countdown"></span></p>
       <button id="doneBtn" onclick="confirmPayment()">Готово</button>
