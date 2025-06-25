@@ -776,7 +776,7 @@ function confirmPayment() {
   history.push(entry);
   localStorage.setItem("purchaseLog", JSON.stringify(history));
 
-  document.getElementById("status").textContent = "Покупка сохранена!";
+  document.getElementById("status").textContent = "Готово!";
   document.getElementById("confirmBtn").classList.add("hidden");
   document.getElementById("paymentSection").classList.add("hidden");
   document.getElementById("qrInput").value = "";
@@ -784,5 +784,6 @@ function confirmPayment() {
   document.getElementById("manualCommentText").value = "";
   document.getElementById("itemName").textContent = "";
   document.getElementById("itemPrice").textContent = "";
+  document.getElementById("result").classList.add("hidden");
   clearInterval(timerInterval);
 }
