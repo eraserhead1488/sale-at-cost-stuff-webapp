@@ -134,25 +134,25 @@ let drinks = [
   {
     "name": "Cyberwater Apple Kiwi 0,45 л",
     "price": 90,
-    "prefix": "0104657781540070",
+    "prefix": "0104627169005002",
     "ean13": "4657781540070"
   },
   {
     "name": "Cyberwater Cyber Berry 0,45 л",
     "price": 90,
-    "prefix": "0104657781540131",
+    "prefix": "0104627169005040",
     "ean13": "4657781540131"
   },
   {
     "name": "Cyberwater Juicy Mango 0,45 л",
     "price": 90,
-    "prefix": "0104657781540094",
+    "prefix": "0104627169005026",
     "ean13": "4657781540094"
   },
   {
     "name": "Cyberwater Original 0,45 л",
     "price": 90,
-    "prefix": "0104657781540070",
+    "prefix": "0104627169005033",
     "ean13": "4657781540070"
   },
   {
