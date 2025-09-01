@@ -288,16 +288,22 @@ let drinks = [
     "ean13": "4640273940366"
   },
   {
+    "name": "HQD Energy Blago White Cherry 0,45 л",
+    "price": 100,
+    "prefix": "0104640273940823",
+    "ean13": "4640273940823"
+  },
+  {
     "name": "HQD Energy Sparky Boom 0,45 л",
     "price": 100,
     "prefix": "0104640273940397",
     "ean13": "4640273940397"
   },
   {
-    "name": "HQD Energy Tropic Punch 0,5 л",
+    "name": "HQD Energy Strawberry Cream 0,45 л",
     "price": 100,
-    "prefix": "0104640273940014",
-    "ean13": "4640273940014"
+    "prefix": "0104640273940793",
+    "ean13": "4640273940793"
   },
   {
     "name": "HQD Energy Voltage 0,45 л",
@@ -678,10 +684,34 @@ let drinks = [
     "ean13": "46025418"
   },
   {
-    "name": "Maltesers",
-    "price": 90,
-    "prefix": "",
-    "ean13": "5000159555715"
+    "name": "Tornado Bubble",
+    "price": 70,
+    "prefix": "0107640157156101",
+    "ean13": "7640157156101"
+  },
+  {
+    "name": "Tornado Black",
+    "price": 70,
+    "prefix": "0107640157156989",
+    "ean13": "7640157156989"
+  },
+  {
+    "name": "Tornado Banana",
+    "price": 70,
+    "prefix": "0107640157156842",
+    "ean13": "7640157156842"
+  },
+  {
+    "name": "Tornado Icebbery",
+    "price": 70,
+    "prefix": "0107640157157122",
+    "ean13": "7640157157122"
+  },
+  {
+    "name": "Tornado Skill",
+    "price": 70,
+    "prefix": "0107640157157061",
+    "ean13": "7640157157061"
   },
   {
     "name": "Mars",
