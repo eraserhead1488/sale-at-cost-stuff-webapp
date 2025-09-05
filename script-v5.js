@@ -792,18 +792,21 @@ function sendPurchaseToTelegram({ time, user, code, name }) {
   const chatId = '-1002997473435'; // твой chat_id
 
   const message = `
-📅 ${time}
-👤 ${user}
-🔎 QR: ${code}
-🥤 ${name}
-  `;
+<b>📅 ${time}</b>
+<b>👤 ${user}</b>
+<b>🔎 QR:</b> <code>${code}</code>
+<b>🥤 ${name}</b>
+`;
 
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ chat_id: chatId, text: message })
-  }).catch(err => console.error("Ошибка Telegram:", err));
-}
+fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({
+    chat_id: chatId,
+    text: message,
+    parse_mode: 'HTML' // 👈 включаем HTML-режим
+  })
+});
 
 function confirmPayment() {
   const code = localStorage.getItem("lastCode") || "—";
