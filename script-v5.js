@@ -821,7 +821,18 @@ function confirmPayment() {
   localStorage.setItem("purchaseLog", JSON.stringify(history));
   renderTable();
 
-  document.getElementById("status").textContent = "Готово!";
+  const statusElem = document.getElementById("status");
+  statusElem.textContent = "✅ Покупка совершена!";
+  statusElem.style.color = "#00ff88";
+  statusElem.style.fontWeight = "bold";
+  statusElem.style.fontSize = "18px";
+
+  setTimeout(() => {
+    statusElem.textContent = "";
+  }, 3000);
+
+  document.getElementById("doneBtn").textContent = "Отправлено";
+  document.getElementById("doneBtn").disabled = true;
   document.getElementById("confirmBtn").classList.add("hidden");
   document.getElementById("paymentSection").classList.add("hidden");
   document.getElementById("qrInput").value = "";
