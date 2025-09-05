@@ -788,14 +788,14 @@ function updateCountdown() {
 }
 
 function sendPurchaseToTelegram({ time, user, code, name }) {
-  const token = '8362663080:AAGR-ERD0VAwtj0tWatBKZMUmv3nWhYlehc'; // вставь сюда свой токен
-  const chatId = '-1002997473435'; // вставь сюда chat_id канала
+  const token = '8362663080:AAGR-ERD0VAwtj0tWatBKZMUmv3nWhYlehc'; // твой токен
+  const chatId = '-1002997473435'; // твой chat_id
 
   const message = `
-  📅 ${date}
-  👤 ${admin}
-  🔎 QR: ${qr}
-  🥤 ${name}
+📅 ${time}
+👤 ${user}
+🔎 QR: ${code}
+🥤 ${name}
   `;
 
   fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
