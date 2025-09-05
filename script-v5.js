@@ -816,13 +816,12 @@ function confirmPayment() {
 
   const now = new Date().toLocaleString("ru-RU");
   const entry = { time: now, user, code, name, ean };
-  
+
   sendPurchaseToTelegram(entry);
 
   const history = JSON.parse(localStorage.getItem("purchaseLog") || "[]");
   history.push(entry);
   localStorage.setItem("purchaseLog", JSON.stringify(history));
-  renderTable();
 
   const statusElem = document.getElementById("status");
   statusElem.textContent = "✅ Покупка совершена!";
@@ -836,6 +835,7 @@ function confirmPayment() {
 
   document.getElementById("doneBtn").textContent = "Отправлено";
   document.getElementById("doneBtn").disabled = true;
+
   document.getElementById("confirmBtn").classList.add("hidden");
   document.getElementById("paymentSection").classList.add("hidden");
   document.getElementById("qrInput").value = "";
