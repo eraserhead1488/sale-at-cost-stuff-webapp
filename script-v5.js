@@ -624,12 +624,6 @@ let drinks = [
     "ean13": "4627187857089"
   },
   {
-    "name": "The Scandalist Energy Drink Geneve 0,45 л",
-    "price": 110,
-    "prefix": "0104627187857119",
-    "ean13": "4627187857119"
-  },
-  {
     "name": "KitKat",
     "price": 70,
     "prefix": "",
@@ -793,6 +787,24 @@ function updateCountdown() {
   }
 }
 
+function sendPurchaseToTelegram({ time, user, code, name }) {
+  const token = '8362663080:AAGR-ERD0VAwtj0tWatBKZMUmv3nWhYlehc'; // вставь сюда свой токен
+  const chatId = '-1002997473435'; // вставь сюда chat_id канала
+
+  const message = `
+  📅 ${date}
+  👤 ${admin}
+  🔎 QR: ${qr}
+  🥤 ${name}
+  `;
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ chat_id: chatId, text: message })
+  }).catch(err => console.error("Ошибка Telegram:", err));
+}
+
 function confirmPayment() {
   const code = localStorage.getItem("lastCode") || "—";
   const user = document.getElementById("username").value.trim();
@@ -801,10 +813,13 @@ function confirmPayment() {
 
   const now = new Date().toLocaleString("ru-RU");
   const entry = { time: now, user, code, name, ean };
+  
+  sendPurchaseToTelegram(entry);
 
   const history = JSON.parse(localStorage.getItem("purchaseLog") || "[]");
   history.push(entry);
   localStorage.setItem("purchaseLog", JSON.stringify(history));
+  renderTable();
 
   document.getElementById("status").textContent = "Готово!";
   document.getElementById("confirmBtn").classList.add("hidden");
