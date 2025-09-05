@@ -791,22 +791,22 @@ function sendPurchaseToTelegram({ time, user, code, name }) {
   const token = '8362663080:AAGR-ERD0VAwtj0tWatBKZMUmv3nWhYlehc'; // твой токен
   const chatId = '-1002997473435'; // твой chat_id
 
-  const message = `
-<b>📅 ${time}</b>
-<b>👤 ${user}</b>
-<b>🔎 QR:</b> <code>${code}</code>
-<b>🥤 ${name}</b>
-`;
+  const message =
+    `<b>📅 ${time}</b>\n` +
+    `<b>👤 ${user}</b>\n` +
+    `<b>🔎 QR:</b> <code>${code}</code>\n` +
+    `<b>🥤 ${name}</b>`;
 
-fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-  method: 'POST',
-  headers: { 'Content-Type': 'application/json' },
-  body: JSON.stringify({
-    chat_id: chatId,
-    text: message,
-    parse_mode: 'HTML' // 👈 включаем HTML-режим
-  })
-});
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      chat_id: chatId,
+      text: message,
+      parse_mode: 'HTML'
+    })
+  }).catch(err => console.error("Ошибка Telegram:", err));
+}
 
 function confirmPayment() {
   const code = localStorage.getItem("lastCode") || "—";
